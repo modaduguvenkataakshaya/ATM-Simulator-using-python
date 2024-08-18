@@ -1,0 +1,34 @@
+print("Welcome to the simple ATM Simulator")
+balance=1000
+user_pin='1234'
+entered_pin=input("Please enter your pin:")
+if entered_pin!=user_pin:
+    print("Invalid pin.existing")
+    atm_on=False
+else:
+    atm_on=True
+while atm_on:
+    print("MAin Menu:")
+    print("1.Check balance")
+    print("2.Deposit money")
+    print("3.Withdraw money")
+    print("4.exit")
+    choice=input("Enter your choice")
+    if choice=='1':
+        print("Your current balance is $" +str(balance))
+    elif choice=='2':
+        amount=float(input("enter the amount to deposit:$"))
+        balance+=amount
+        print("$" + str(amount)+"deposited successfully")
+    elif choice=='3':
+        amount=float(input("enter the amount to withdraw:$"))
+        if amount>balance:
+            print("insufficient balance")
+        else:
+            balance-=amount
+            print("$" + str(amount)+"withdrawn successfully")
+    elif choice=='4':
+        print("thankyou for using the ATM.Goodbye!")
+        atm_on=False
+    else:
+        print("Invalid choice .Please try again")
